@@ -1,6 +1,5 @@
 'use client'
 import { useEffect, useState } from 'react'
-import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { useAuth } from '@/components/AuthContext'
 import { getMySubscription, getScores, getUserCharity, getDraws, getWinners } from '@/lib/api'
@@ -10,12 +9,12 @@ import toast from 'react-hot-toast'
 
 export default function DashboardPage() {
   const { profile } = useAuth()
-  const searchParams = useSearchParams()
   const [data, setData]     = useState({ sub: null, scores: [], charity: null, draws: [], wins: [] })
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    if (searchParams.get('subscription') === 'success') {
+    const params = new URLSearchParams(window.location.search)
+    if (params.get('subscription') === 'success') {
       toast.success('Subscription activated! Welcome to GolfCharity 🎉')
     }
   }, [])
