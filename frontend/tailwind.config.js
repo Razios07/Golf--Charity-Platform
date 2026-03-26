@@ -29,9 +29,9 @@ module.exports = {
         },
       },
       fontFamily: {
-        display: ['Georgia', 'serif'],
-        body: ['system-ui', 'sans-serif'],
-        mono: ['ui-monospace', 'monospace'],
+        display: ['var(--font-display)', 'Georgia', 'serif'],
+        body:    ['var(--font-body)',    'system-ui', 'sans-serif'],
+        mono:    ['var(--font-mono)',    'ui-monospace', 'monospace'],
       },
       animation: {
         'fade-up': 'fadeUp 0.6s ease forwards',
