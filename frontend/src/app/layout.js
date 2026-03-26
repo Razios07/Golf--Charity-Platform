@@ -1,4 +1,5 @@
 import './globals.css'
+import { Playfair_Display, DM_Sans, DM_Mono } from 'next/font/google'
 import { Toaster } from 'react-hot-toast'
 import { AuthProvider } from '@/components/AuthContext'
 
